@@ -105,14 +105,14 @@ const Navigation = () => {
               </div>
             </div>
 
-            {/* Desktop Navigation - Enhanced */}
-            <div className="hidden md:flex items-center gap-2">
+            {/* Desktop Navigation - Enhanced with better iPad sizing */}
+            <div className="hidden md:flex items-center gap-1.5 lg:gap-2">
               {navItems.map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
-                  className={`group relative text-sm font-medium transition-all duration-300 px-4 py-2.5 rounded-lg ${
+                  className={`group relative text-xs lg:text-sm font-medium transition-all duration-300 px-2.5 lg:px-4 py-2 lg:py-2.5 rounded-lg ${
                     activeSection === item.id
                       ? "text-accent"
                       : "text-muted-foreground hover:text-foreground hover:bg-accent/10"
