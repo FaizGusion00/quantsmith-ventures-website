@@ -13,35 +13,39 @@ const Hero = () => {
   const [isNightImageLoaded, setIsNightImageLoaded] = useState(false);
   const { theme } = useTheme();
 
-  // Preload both images immediately so there's no delay when switching
+  // Use isDark directly from DOM for immediate updates
+  const [isDark, setIsDark] = useState(document.documentElement.classList.contains('dark'));
+
+  // Listen for theme changes directly from DOM
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+    
+    return () => observer.disconnect();
+  }, []);
+
+  // Preload both images immediately with cache busting
   useEffect(() => {
     let mounted = true;
     
     const img1 = new window.Image();
-    img1.src = heroImage;
+    img1.src = `${heroImage}?v=${Date.now()}`;
     img1.onload = () => mounted && setIsDayImageLoaded(true);
     
     const img2 = new window.Image();
-    img2.src = heroImageNight;
+    img2.src = `${heroImageNight}?v=${Date.now()}`;
     img2.onload = () => mounted && setIsNightImageLoaded(true);
 
     return () => {
       mounted = false;
     };
   }, []);
-
-  // Show loading when theme changes
-  useEffect(() => {
-    // Always show loading briefly when theme changes for better UX
-    setIsLoading(true);
-    
-    // Hide loading after a short delay to ensure smooth transition
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500); // 500ms minimum loading time for better UX
-
-    return () => clearTimeout(timer);
-  }, [theme]);
 
   const scrollToSection = useCallback((id: string) => {
     const element = document.getElementById(id);
@@ -62,22 +66,15 @@ const Hero = () => {
         </div>
       )}
 
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay - INSTANT SWITCH */}
       <div className="absolute inset-0 z-0">
-        {/* Show both images, but hide one based on theme */}
+        {/* Use isDark for instant detection */}
         <img
-          src={heroImage}
+          key={`${isDark}`}
+          src={isDark ? heroImageNight : heroImage}
           alt="Modern cityscape representing financial excellence"
-          className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${theme === 'dark' ? 'opacity-0' : 'opacity-100'}`}
+          className="w-full h-full object-cover absolute inset-0"
           loading="eager"
-          onLoad={() => theme === 'light' && setIsLoading(false)}
-        />
-        <img
-          src={heroImageNight}
-          alt="Modern cityscape representing financial excellence"
-          className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-300 ${theme === 'dark' ? 'opacity-100' : 'opacity-0'}`}
-          loading="eager"
-          onLoad={() => theme === 'dark' && setIsLoading(false)}
         />
         
         {/* Overlay for light mode only - NO OVERLAY for dark mode */}
