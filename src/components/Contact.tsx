@@ -18,14 +18,14 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <section ref={ref} id="contact" className={`py-16 sm:py-20 md:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+    <section ref={ref} id="contact" className={`py-8 sm:py-12 md:py-20 lg:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-1/2 h-full opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 md:w-96 md:h-96 rounded-full bg-gold blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+        <div className="text-center mb-6 sm:mb-10 md:mb-16 animate-fade-in">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 md:mb-6">
             Get in Touch
           </h2>

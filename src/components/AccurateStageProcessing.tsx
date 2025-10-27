@@ -79,7 +79,7 @@ const AccurateStageProcessing = () => {
   ];
 
   return (
-    <section ref={ref} id="stage-processing" className={`py-16 sm:py-20 md:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+    <section ref={ref} id="stage-processing" className={`py-8 sm:py-12 md:py-20 lg:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5">
         <div className="absolute top-20 right-20 w-64 h-64 md:w-96 md:h-96 rounded-full bg-accent blur-3xl"></div>
@@ -90,7 +90,7 @@ const AccurateStageProcessing = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+        <div className="text-center mb-6 sm:mb-10 md:mb-16 animate-fade-in">
           <div className="inline-block px-4 py-2 bg-white/10 rounded-full mb-6">
             <span className="text-sm font-semibold text-white">Our Process</span>
           </div>

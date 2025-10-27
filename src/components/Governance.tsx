@@ -59,7 +59,7 @@ const Governance = () => {
   ];
 
   return (
-    <section ref={ref} id="governance" className={`py-16 sm:py-20 md:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+    <section ref={ref} id="governance" className={`py-8 sm:py-12 md:py-20 lg:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-1/3 h-full opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 md:w-96 md:h-96 rounded-full bg-accent blur-3xl"></div>
@@ -69,7 +69,7 @@ const Governance = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+        <div className="text-center mb-6 sm:mb-10 md:mb-16 animate-fade-in">
           <div className="inline-block px-4 py-2 bg-white/10 rounded-full mb-6">
             <span className="text-sm font-semibold text-white">Corporate Governance</span>
           </div>
@@ -107,7 +107,7 @@ const Governance = () => {
         </div>
 
         {/* Investment Decision Making Process */}
-        <div className="max-w-5xl mx-auto mb-12 md:mb-16">
+        <div className="max-w-5xl mx-auto mb-6 sm:mb-10 md:mb-16">
           <div className="text-center mb-10 md:mb-12">
             <h3 className="text-xl md:text-2xl lg:text-3xl font-heading font-bold mb-3">
               Investment Decision Making Processes
@@ -122,7 +122,7 @@ const Governance = () => {
         </div>
 
         {/* Responsibility & Accountability */}
-        <div className="max-w-5xl mx-auto mb-12 md:mb-16">
+        <div className="max-w-5xl mx-auto mb-6 sm:mb-10 md:mb-16">
           <div className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/10">
             <div className="text-center mb-8">
               <div className="w-16 h-1 bg-gradient-accent mx-auto mb-6" />

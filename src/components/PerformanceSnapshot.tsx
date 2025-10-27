@@ -34,7 +34,7 @@ const PerformanceSnapshot = () => {
   }, []);
 
   return (
-    <section ref={ref} id="performance" className={`py-16 sm:py-20 md:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+    <section ref={ref} id="performance" className={`py-8 sm:py-12 md:py-20 lg:py-32 bg-primary text-white relative overflow-hidden ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
         <div className="absolute top-20 right-20 w-64 h-64 md:w-96 md:h-96 rounded-full bg-accent blur-3xl"></div>

@@ -72,10 +72,10 @@ const DevelopmentMechanism = () => {
   ];
 
   return (
-    <section ref={ref} id="development-mechanism" className={`py-16 sm:py-20 md:py-32 bg-background ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+    <section ref={ref} id="development-mechanism" className={`py-8 sm:py-12 md:py-20 lg:py-32 bg-background ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+        <div className="text-center mb-6 sm:mb-10 md:mb-16 animate-fade-in">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-accent/10 to-gold/10 rounded-full mb-6">
             <span className="text-sm font-semibold bg-gradient-to-r from-accent to-gold bg-clip-text text-transparent">Labuan Financial Services Authority</span>
           </div>
@@ -133,7 +133,7 @@ const DevelopmentMechanism = () => {
         </div>
 
         {/* Eligibility Section */}
-        <div className="max-w-4xl mx-auto mb-12 md:mb-16">
+        <div className="max-w-4xl mx-auto mb-6 sm:mb-10 md:mb-16">
           <div className="bg-card p-8 md:p-12 rounded-3xl shadow-medium border border-border">
             <h3 className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-primary mb-6 text-center">
               Eligibility

@@ -318,4 +318,18 @@ All colors MUST be HSL.
   .dark .text-foreground {
     color: hsl(0 0% 92%) !important;
   }
+
+  /* Mobile compact spacing utilities */
+  .mobile-compact {
+    @media (max-width: 639px) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  .mobile-section-padding {
+    @media (max-width: 639px) {
+      padding: 1rem 1.5rem;
+    }
+  }
 }

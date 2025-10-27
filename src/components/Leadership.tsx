@@ -55,9 +55,9 @@ const Leadership = () => {
   ];
 
   return (
-    <section ref={ref} id="leadership" className={`py-16 sm:py-20 md:py-32 bg-background ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+    <section ref={ref} id="leadership" className={`py-8 sm:py-12 md:py-20 lg:py-32 bg-background ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+        <div className="text-center mb-6 sm:mb-10 md:mb-16 animate-fade-in">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary mb-4 md:mb-6">
             Leadership Team
           </h2>

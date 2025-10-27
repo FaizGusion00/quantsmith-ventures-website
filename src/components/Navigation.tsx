@@ -69,7 +69,7 @@ const Navigation = () => {
             : "bg-background/95 backdrop-blur-md shadow-sm border-b border-border/30"
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-3 sm:px-6 lg:px-8">
           <div
             className={`flex items-center justify-between transition-all duration-500 ease-out ${
               isScrolled ? "h-16 md:h-18" : "h-16 sm:h-18 md:h-22"
@@ -77,23 +77,27 @@ const Navigation = () => {
           >
             {/* Logo - Enhanced */}
             <div
-              className="flex items-center space-x-2 sm:space-x-3 cursor-pointer group"
+              className="flex items-center space-x-1.5 sm:space-x-2 md:space-x-3 cursor-pointer group"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl gradient-accent flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg group-active:scale-95">
-                <span className="text-xl sm:text-2xl font-heading font-bold text-white">Q</span>
+              <div className="w-9 h-9 sm:w-10 md:h-11 lg:h-12 rounded-xl gradient-accent flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg group-active:scale-95 flex-shrink-0">
+                <span className="text-lg sm:text-xl md:text-2xl font-heading font-bold text-white">Q</span>
               </div>
-              <div className="hidden sm:flex flex-col">
+              {/* Show abbreviated text on very small screens, full text on sm+ */}
+              <div className="flex flex-col min-w-0">
                 <span
-                  className={`font-heading font-bold leading-tight text-primary transition-all duration-500 ${
-                    isScrolled ? "text-xs md:text-sm" : "text-sm md:text-base"
+                  className={`font-heading font-bold leading-tight text-primary transition-all duration-500 truncate ${
+                    isScrolled ? "text-[9px] sm:text-xs md:text-sm" : "text-[9px] sm:text-sm md:text-base"
                   }`}
                 >
-                  QUANTSMITH VENTURES
+                  <span className="sm:hidden">QSV</span>
+                  <span className="hidden sm:inline md:hidden">QM</span>
+                  <span className="hidden md:inline">QUANTSMITH</span>
+                  <span className="hidden lg:inline"> VENTURES</span>
                 </span>
                 <span
                   className={`text-accent font-medium transition-all duration-500 ${
-                    isScrolled ? "text-[9px] md:text-[10px]" : "text-[10px] md:text-xs"
+                    isScrolled ? "text-[7px] sm:text-[8px] md:text-[9px] lg:text-[10px]" : "text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs"
                   } hidden md:block`}
                 >
                   Accelerating Your Growth
@@ -129,23 +133,27 @@ const Navigation = () => {
             {/* Mobile Menu Button - Enhanced */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2.5 rounded-xl bg-accent/10 hover:bg-accent/20 transition-all duration-300 active:scale-95 border border-accent/20 hover:border-accent/40"
+              className="md:hidden p-1.5 sm:p-2 rounded-xl bg-accent/10 hover:bg-accent/20 transition-all duration-300 active:scale-95 border border-accent/20 hover:border-accent/40 flex-shrink-0"
               aria-label="Toggle menu"
+              style={{
+                marginLeft: 'auto',
+                marginRight: '0.25rem'
+              }}
             >
-              <div className="relative w-6 h-6 flex flex-col justify-center gap-1.5">
+              <div className="relative w-5 h-5 sm:w-6 sm:h-6 flex flex-col justify-center gap-1">
                 <span
-                  className={`absolute w-5 h-0.5 bg-foreground transition-all duration-300 origin-center ${
-                    isOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+                  className={`absolute w-4 sm:w-5 h-0.5 bg-foreground transition-all duration-300 origin-center ${
+                    isOpen ? "rotate-45 translate-y-0" : "-translate-y-1.5"
                   }`}
                 />
                 <span
-                  className={`w-5 h-0.5 bg-foreground transition-all duration-300 ${
+                  className={`w-4 sm:w-5 h-0.5 bg-foreground transition-all duration-300 ${
                     isOpen ? "opacity-0" : "opacity-100"
                   }`}
                 />
                 <span
-                  className={`absolute w-5 h-0.5 bg-foreground transition-all duration-300 origin-center ${
-                    isOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+                  className={`absolute w-4 sm:w-5 h-0.5 bg-foreground transition-all duration-300 origin-center ${
+                    isOpen ? "-rotate-45 translate-y-0" : "translate-y-1.5"
                   }`}
                 />
               </div>
@@ -155,7 +163,7 @@ const Navigation = () => {
           {/* Mobile Menu - Enhanced with better animations */}
           <div
             className={`md:hidden overflow-hidden transition-all duration-500 ease-out ${
-              isOpen ? "max-h-96 pb-4 border-t border-border/50 mt-1" : "max-h-0"
+              isOpen ? "max-h-[600px] pb-4 border-t border-border/50 mt-1" : "max-h-0"
             }`}
           >
             <div className="flex flex-col space-y-1 pt-2">
@@ -164,7 +172,7 @@ const Navigation = () => {
                   key={item.id}
                   variant="ghost"
                   onClick={() => scrollToSection(item.id)}
-                  className={`w-full text-left justify-between items-center px-4 py-3.5 rounded-lg transition-all duration-300 hover:bg-accent/10 group ${
+                  className={`w-full text-left justify-between items-center px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg transition-all duration-300 hover:bg-accent/10 group text-sm sm:text-base ${
                     activeSection === item.id
                       ? "text-accent bg-accent/10 border-l-4 border-accent font-semibold"
                       : "text-muted-foreground hover:text-foreground"
@@ -172,23 +180,23 @@ const Navigation = () => {
                     isOpen ? "opacity-100" : "opacity-0"
                   }`}
                   style={{
-                    transitionDelay: `${isOpen ? index * 0.08 : 0}s`,
+                    transitionDelay: `${isOpen ? index * 0.05 : 0}s`,
                   }}
                 >
-                  <span>{item.label}</span>
+                  <span className="truncate">{item.label}</span>
                   {activeSection === item.id && (
-                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-accent animate-pulse flex-shrink-0 ml-2" />
                   )}
                   {!activeSection && (
-                    <ChevronDown className="w-4 h-4 opacity-0 group-hover:opacity-50 transition-opacity" />
+                    <ChevronDown className="w-4 h-4 opacity-0 group-hover:opacity-50 transition-opacity flex-shrink-0 ml-2" />
                   )}
                 </Button>
               ))}
               
               {/* Theme Toggle in Mobile Menu */}
-              <div className="px-4 py-3.5">
+              <div className="px-3 sm:px-4 py-2.5 sm:py-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-muted-foreground">Theme</span>
+                  <span className="text-xs sm:text-sm font-medium text-muted-foreground">Theme</span>
                   <ThemeToggle />
                 </div>
               </div>

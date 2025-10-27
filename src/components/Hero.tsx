@@ -41,44 +41,44 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-16 md:mt-20">
-        <div className="max-w-4xl animate-fade-in">
-          <div className="inline-block mb-6 md:mb-8">
-            <span className="px-4 py-2 md:px-5 md:py-2.5 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full text-white font-semibold text-xs md:text-sm shadow-lg">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 mt-16 md:mt-20">
+        <div className="max-w-4xl mx-auto animate-fade-in">
+          <div className="inline-block mb-4 sm:mb-6 md:mb-8">
+            <span className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-white/15 backdrop-blur-sm border border-white/30 rounded-full text-white font-semibold text-[10px] sm:text-xs md:text-sm shadow-lg">
               Capital Markets Services Licensed
             </span>
           </div>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-white mb-6 md:mb-8 leading-tight drop-shadow-2xl">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-3 sm:mb-5 md:mb-6 lg:mb-8 leading-tight drop-shadow-2xl text-center">
             Accelerating Your Growth
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 mb-8 md:mb-10 max-w-2xl font-light leading-relaxed drop-shadow-lg">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/95 mb-4 sm:mb-6 md:mb-8 lg:mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-lg text-center">
             Expert corporate management and capital market consultation delivering stability, 
             consistent returns, and long-term capital gains.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-12">
+          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4 mb-4 sm:mb-6 md:mb-8 lg:mb-12 justify-center items-stretch sm:items-center">
             <Button
               size="lg"
               onClick={() => scrollToSection("services")}
-              className="bg-accent hover:bg-accent/90 text-white shadow-large group text-sm md:text-base"
+              className="bg-accent hover:bg-accent/90 text-white shadow-large group text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center"
             >
               Explore Our Services
-              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-all duration-300" />
+              <ArrowRight className="ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-all duration-300" />
             </Button>
             <Button
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("contact")}
-              className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm text-sm md:text-base"
+              className="bg-white/10 border-white/30 text-white hover:bg-white/20 backdrop-blur-sm text-xs sm:text-sm md:text-base w-full sm:w-auto justify-center"
             >
               Get in Touch
             </Button>
           </div>
 
           {/* Stats - Enhanced Visibility */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-8 md:pt-10 border-t border-white/30">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 pt-6 sm:pt-8 md:pt-10 border-t border-white/30">
             <div className="group">
               <div className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-accent mb-1 group-hover:scale-110 transition-transform duration-300">18+</div>
               <div className="text-xs md:text-sm text-white/90 font-medium">Years Experience</div>
