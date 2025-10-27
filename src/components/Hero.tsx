@@ -3,13 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/use-theme";
 
-// Import images properly to ensure they're included in build
-import heroCityscapeImg from "@/assets/hero-cityscape.jpg";
-
-// Light mode uses day.jpg from public folder, dark mode uses hero-cityscape.jpg
-// Using /assets/ prefix for public folder files, imported path for src folder files
-const heroImage = "/assets/day.jpg";
-const heroImageNight = heroCityscapeImg;
+// Both images from public/assets folder
+const heroImage = "/assets/day.jpg";           // Light mode
+const heroImageNight = "/assets/hero-cityscape.jpg";  // Dark mode
 
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(false);
