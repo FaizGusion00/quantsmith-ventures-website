@@ -12,6 +12,10 @@ const InvestmentCommittee = lazy(() => import("@/components/InvestmentCommittee"
 const ResponsiblePersons = lazy(() => import("@/components/ResponsiblePersons"));
 const Consultants = lazy(() => import("@/components/Consultants"));
 const Services = lazy(() => import("@/components/Services"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const SocialProof = lazy(() => import("@/components/SocialProof"));
+const PerformanceSnapshot = lazy(() => import("@/components/PerformanceSnapshot"));
+const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
 const CMSA = lazy(() => import("@/components/CMSA"));
 const Governance = lazy(() => import("@/components/Governance"));
 const DevelopmentMechanism = lazy(() => import("@/components/DevelopmentMechanism"));
@@ -70,6 +74,15 @@ const Index = () => {
             <Services />
           </Suspense>
           <Suspense fallback={<SectionPlaceholder />}>
+            <PerformanceSnapshot />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <Testimonials />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <SocialProof />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
             <CMSA />
           </Suspense>
           <Suspense fallback={<SectionPlaceholder />}>
@@ -85,6 +98,9 @@ const Index = () => {
             <Contact />
           </Suspense>
         </main>
+        <Suspense>
+          <WhatsAppButton />
+        </Suspense>
         <Footer />
       </div>
     </div>

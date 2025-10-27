@@ -1,4 +1,5 @@
-import { Award } from "lucide-react";
+import { Award, ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 
 interface TeamCardProps {
   name: string;
@@ -9,6 +10,9 @@ interface TeamCardProps {
 }
 
 const TeamCard = ({ name, title, description, qualifications, imageSrc }: TeamCardProps) => {
+  const [expanded, setExpanded] = useState(false);
+  const showToggle = description && description.length > 260;
+  const displayText = expanded || !showToggle ? description : `${description.slice(0, 260)}...`;
   return (
     <div className="bg-card rounded-2xl shadow-medium border border-border overflow-hidden hover:shadow-large hover:border-accent/30 transition-all duration-500 animate-scale-in group cursor-pointer">
       {/* Image Placeholder */}
@@ -44,9 +48,28 @@ const TeamCard = ({ name, title, description, qualifications, imageSrc }: TeamCa
           </div>
         )}
         
-        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-5 md:line-clamp-6">
-          {description}
+        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+          {displayText}
         </p>
+
+        {showToggle && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-3 inline-flex items-center gap-1.5 text-accent hover:text-accent/80 text-xs md:text-sm font-medium"
+            aria-expanded={expanded}
+          >
+            {expanded ? (
+              <>
+                Show less <ChevronUp className="w-3.5 h-3.5" />
+              </>
+            ) : (
+              <>
+                Read more <ChevronDown className="w-3.5 h-3.5" />
+              </>
+            )}
+          </button>
+        )}
       </div>
     </div>
   );
