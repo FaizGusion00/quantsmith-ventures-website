@@ -1,0 +1,22 @@
+{
+  "name": "Quantsmith Ventures",
+  "short_name": "QV",
+  "description": "Professional corporate management and capital market services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1929",
+  "theme_color": "#FF8C42",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
+

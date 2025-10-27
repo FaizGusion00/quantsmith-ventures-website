@@ -1,0 +1,321 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 26% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+
+    --primary: 220 90% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 220 26% 14%;
+
+    --muted: 210 17% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 25 95% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --gold: 43 96% 56%;
+    --gold-foreground: 220 26% 14%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 90% 12%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 90% 12%) 0%, hsl(220 70% 20%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 58%) 0%, hsl(43 96% 56%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 17% 98%) 100%);
+    
+    --shadow-soft: 0 2px 8px -2px hsl(220 90% 12% / 0.08);
+    --shadow-medium: 0 4px 16px -4px hsl(220 90% 12% / 0.12);
+    --shadow-large: 0 20px 40px -12px hsl(220 90% 12% / 0.18);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 10% 4%;
+
+    --secondary: 240 10% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 25 95% 58%;
+    --accent-foreground: 240 10% 4%;
+
+    --gold: 43 96% 56%;
+    --gold-foreground: 240 10% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 25 95% 58%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(240 10% 8%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 58%) 0%, hsl(43 96% 56%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(240 10% 6%) 0%, hsl(240 10% 4%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Performance optimizations */
+  img, video {
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Smooth scrolling for better UX */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* GPU acceleration for animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimized hover effects */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Smooth fade transitions */
+  .fade-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Touch-friendly interactions */
+  @media (hover: none) {
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+  /* Dark Mode Animated Gradient Background */
+  .dark {
+    --background-animated: linear-gradient(
+      45deg,
+      #0f172a 0%,
+      #1e293b 15%,
+      #0f172a 30%,
+      #1e293b 45%,
+      #0f172a 60%,
+      #1e293b 75%,
+      #0f172a 90%,
+      #1e293b 100%
+    );
+  }
+
+  .dark body {
+    background: hsl(240 10% 4%);
+    position: relative;
+  }
+
+  .dark body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 140, 66, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 199, 71, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    background-size: 400% 400%;
+    animation: gradient-shift 25s ease infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Improved gradient for dark mode sections */
+  .dark .gradient-subtle {
+    background: linear-gradient(
+      135deg,
+      hsl(240 10% 8%) 0%,
+      hsl(240 10% 6%) 50%,
+      hsl(240 10% 8%) 100%
+    );
+    position: relative;
+  }
+
+  .dark .gradient-subtle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 140, 66, 0.06) 0%, transparent 60%),
+                radial-gradient(circle at 70% 70%, rgba(255, 199, 71, 0.04) 0%, transparent 60%);
+    background-size: 400% 400%;
+    animation: gradient-shift 20s ease infinite;
+    pointer-events: none;
+  }
+
+  /* Enhance contrast in dark mode */
+  .dark .text-muted-foreground {
+    color: hsl(240 5% 75%);
+  }
+
+  .dark .border {
+    border-color: hsl(240 10% 25%);
+  }
+
+  /* Better visibility for cards in dark mode */
+  .dark .bg-card {
+    background-color: hsl(240 10% 12%) !important;
+    border-color: hsl(240 10% 25%) !important;
+  }
+
+  /* Enhance white sections in dark mode */
+  .dark .bg-white {
+    background-color: hsl(240 10% 12%) !important;
+  }
+
+  /* Better primary sections in dark mode */
+  .dark .bg-primary {
+    background-color: hsl(240 10% 12%);
+  }
+
+  /* Override gradient backgrounds to be more visible in dark mode */
+  .dark .bg-gradient-to-br {
+    background: hsl(240 10% 12%) !important;
+    border-color: hsl(240 10% 25%) !important;
+  }
+
+  /* Make feature cards in Services section very visible in dark mode */
+  .dark [class*="bg-gradient-to-br from-white to-accent"] {
+    background: linear-gradient(135deg, hsl(240 10% 15%) 0%, hsl(240 10% 12%) 100%) !important;
+    border-color: hsl(240 10% 30%) !important;
+  }
+
+  .dark section {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Enhanced text visibility in dark mode */
+  .dark .text-primary {
+    color: hsl(0 0% 95%) !important;
+  }
+
+  .dark .text-foreground {
+    color: hsl(0 0% 92%) !important;
+  }
+}
