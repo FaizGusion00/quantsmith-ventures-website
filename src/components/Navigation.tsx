@@ -15,7 +15,7 @@ const Navigation = () => {
       setIsScrolled(scrolled);
 
       // Detect active section
-      const sections = ["about", "vision", "leadership", "services", "contact"];
+      const sections = ["about", "vision", "leadership", "investment-committee", "responsible-persons", "consultants", "services", "cmsa", "governance", "development-mechanism", "stage-processing", "contact"];
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -46,6 +46,8 @@ const Navigation = () => {
     { label: "About", id: "about" },
     { label: "Vision & Mission", id: "vision" },
     { label: "Leadership", id: "leadership" },
+    { label: "Committee", id: "investment-committee" },
+    { label: "Team", id: "responsible-persons" },
     { label: "Services", id: "services" },
     { label: "Contact", id: "contact" },
   ];

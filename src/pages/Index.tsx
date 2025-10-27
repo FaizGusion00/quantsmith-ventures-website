@@ -8,7 +8,14 @@ const Hero = lazy(() => import("@/components/Hero"));
 const About = lazy(() => import("@/components/About"));
 const VisionMission = lazy(() => import("@/components/VisionMission"));
 const Leadership = lazy(() => import("@/components/Leadership"));
+const InvestmentCommittee = lazy(() => import("@/components/InvestmentCommittee"));
+const ResponsiblePersons = lazy(() => import("@/components/ResponsiblePersons"));
+const Consultants = lazy(() => import("@/components/Consultants"));
 const Services = lazy(() => import("@/components/Services"));
+const CMSA = lazy(() => import("@/components/CMSA"));
+const Governance = lazy(() => import("@/components/Governance"));
+const DevelopmentMechanism = lazy(() => import("@/components/DevelopmentMechanism"));
+const AccurateStageProcessing = lazy(() => import("@/components/AccurateStageProcessing"));
 const Contact = lazy(() => import("@/components/Contact"));
 
 // Loading placeholder
@@ -51,7 +58,28 @@ const Index = () => {
             <Leadership />
           </Suspense>
           <Suspense fallback={<SectionPlaceholder />}>
+            <InvestmentCommittee />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <ResponsiblePersons />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <Consultants />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
             <Services />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <CMSA />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <Governance />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <DevelopmentMechanism />
+          </Suspense>
+          <Suspense fallback={<SectionPlaceholder />}>
+            <AccurateStageProcessing />
           </Suspense>
           <Suspense fallback={<SectionPlaceholder />}>
             <Contact />
