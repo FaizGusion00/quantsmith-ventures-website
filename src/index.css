@@ -230,7 +230,8 @@ All colors MUST be HSL.
   }
 
   .dark body {
-    background: hsl(240 10% 4%);
+    /* Don't force dark background - let each section handle its own styling */
+    background: transparent;
     position: relative;
   }
 
