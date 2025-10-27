@@ -1,68 +1,35 @@
-# Quantsmith Ventures Demo Website
+# Quantsmith Ventures - Corporate Website
 
-This project is a demo website for Quantsmith Ventures, showcasing financial and investment management services.
+A modern, responsive corporate website for Quantsmith Ventures SDN BHD, showcasing their expertise in corporate management, financial services, and capital market consultation.
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- **Modern Design**: Clean, professional interface with smooth animations
+- **Responsive**: Fully optimized for mobile, tablet, and desktop devices
+- **Dark Mode**: Beautiful animated dark theme with gradient effects
+- **Performance Optimized**: Code splitting, lazy loading, and optimized assets
+- **Smooth Animations**: Professional transitions and scroll-triggered animations
+- **SEO Optimized**: Proper meta tags, semantic HTML, and Open Graph support
+- **Security**: XSS protection, content security policies, and secure headers
+- **Accessibility**: ARIA labels, keyboard navigation, and semantic HTML
 
-**Use your preferred IDE**
+## 🚀 Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes.
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite 5
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Radix UI (shadcn/ui)
+- **Routing**: React Router DOM
+- **Animations**: Tailwind CSS animations with custom keyframes
+- **Icons**: Lucide React
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📦 Installation
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-You can deploy this project using various hosting platforms like Vercel, Netlify, or your preferred hosting provider.
-
-## Development
-
-```sh
+```bash
 # Install dependencies
 npm install
 
-# Run development server
+# Start development server
 npm run dev
 
 # Build for production
@@ -74,3 +41,82 @@ npm run preview
 # Lint code
 npm run lint
 ```
+
+## 🎨 Design Features
+
+### Light Mode
+- Clean white backgrounds with subtle gradients
+- High contrast for excellent readability
+- Professional corporate color scheme
+
+### Dark Mode
+- Animated gradient backgrounds with moving colorful effects
+- Optimized contrast for eye comfort
+- Smooth theme transitions
+
+## ✨ Key Sections
+
+1. **Hero Section**: Compelling introduction with animated background
+2. **About**: Company overview and philosophy
+3. **Vision & Mission**: Core values and objectives
+4. **Leadership**: Team members with qualifications
+5. **Services**: Comprehensive service offerings with dark mode cards
+6. **Contact**: Multiple contact methods and business information
+
+## 🎯 Performance
+
+- ✅ Code splitting for faster initial loads
+- ✅ Lazy loading of components
+- ✅ Optimized images and assets
+- ✅ Minimal bundle size
+- ✅ Fast page transitions
+
+## 🔒 Security
+
+- ✅ XSS Protection
+- ✅ Content Security Policy
+- ✅ Secure headers and meta tags
+- ✅ Referrer Policy configuration
+
+## 📱 Responsive Design
+
+- Mobile-first approach
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Touch-friendly interactions
+- Optimized mobile navigation
+
+## 🛠️ Development
+
+```bash
+# Development server runs on http://localhost:3000
+npm run dev
+
+# Build for production
+npm run build
+
+# The built files will be in the `dist/` directory
+```
+
+## 📄 License
+
+© 2025 Quantsmith Ventures SDN BHD. All rights reserved.
+
+Licensed under Capital Markets Services Act (CMSA 2007)
+
+## 📧 Contact
+
+- **Company**: Quantsmith Ventures SDN BHD
+- **Email**: enquiry@quant-smith.com
+- **Phone**: +603 5524 6495
+- **Address**: UNIT 18-35, PLAZA AZALEA, Persiaran Bandaraya, Seksyen 14, 40200 Shah Alam, Selangor, Malaysia
+- **Website**: [www.quant-smith.com](https://www.quant-smith.com)
+
+## 👨‍💻 Developed By
+
+**Faiz Nasir**
+
+Professional developer specializing in modern web applications with focus on performance, accessibility, and user experience. Founder and Software Engineer (with 6+ years experiences) of FG Universal Empire Company 
+
+---
+
+**Quantsmith Ventures** - Accelerating Your Growth
